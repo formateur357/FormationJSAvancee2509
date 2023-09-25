@@ -1,3 +1,10 @@
+const symbole = Symbol('propriete_privee');
+const obj = {};
+
+obj[symbole] = 'Ceci est une propriete privee';
+
+console.log(obj[symbole]);
+
 let person = {
     name: "morgan",
     age: 9,

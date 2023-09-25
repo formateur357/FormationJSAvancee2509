@@ -1,0 +1,3 @@
+Faire un contructeur(1) avec trois propriétés
+Puis lui ajouter deux méthodes
+Ensuite faire deux constructeurs(2,3) avec une méthode chacun 3 hérite de 2 qui hérite de 1

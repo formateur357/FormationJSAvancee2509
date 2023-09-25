@@ -1,8 +1,12 @@
 class Animal {
     constructor(nom) {
+        this.chat = new Chat();
         this.nom = nom;
     }
 
+    manger() {
+        throw new Error("La methode 'manger'doit etre implementee.")
+    }
     parler() {
         console.log(`${this.nom} fait un bruit indefini.`)
     }
@@ -13,6 +17,9 @@ class Animal {
 }
 
 class Chien extends Animal {
+    manger() {
+        return "La methode 'manger'a ete implementee."
+    }
     parler() {
         console.log(`${this.nom} aboie.`)
     }
