@@ -1,3 +1,14 @@
 Faire un contructeur(1) avec trois propriétés
 Puis lui ajouter deux méthodes
 Ensuite faire deux constructeurs(2,3) avec une méthode chacun 3 hérite de 2 qui hérite de 1
+
+
+Exercice 2:
+
+Créer une fonction qui calculait le temps de remplissage d'une piscine:
+
+Vous allez créer le constructeur d'un objet piscine. Cet objet piscine aura besoin de 4 informations stockées dans des attributs : la longueur, la largeur, la hauteur de la piscine et le débit de remplissage en m3 par minute.
+
+A cette étape vous pouvez déja instancier un objet piscine basique en lui passant 4 valeurs en argument. Le problème c'est que cet objet ne fait rien pour le moment. Vous allez donc lui ajouter une méthode remplissage.
+
+La fonction remplissage calcul le temps de remplissage de la piscine grâce aux attributs de l'objet et retourne ce résultat. A ce stade votre objet est fonctionnel et fait ce qu'on lui demande, il prend des valeurs et calcul un débit.
