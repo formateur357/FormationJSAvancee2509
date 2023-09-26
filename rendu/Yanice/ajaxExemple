@@ -15,13 +15,11 @@ script>
                     projectNum: '@Model.Project.XCONF_PROJECT_NUM',
                     ruleList: [@Model.auditRulesExecViewModel.ruleNums]
                 },
-                success: function (result) {
+                success: (result) => {
                     if (result.refresh) {
                         showLoader();
                         window.location.reload(true);
                     }
-
- 
 
                     $('#stepBody').html(result);
                     $("div[id^=tooltip]").remove();
@@ -30,5 +28,42 @@ script>
         }
         , 10000);
 </text>
+    }
+</script>
+
+
+// exemple with fetch
+
+<script>
+    setEditPage();
+
+    @if (Model.Project.XCONF_WORKFLOW_STEP_NUM == (int)XCONF.Util.Enumerations.WORKFLOW_STEP.AUDIT_EXEC ||
+            Model.Project.XCONF_WORKFLOW_STEP_NUM == (int)XCONF.Util.Enumerations.WORKFLOW_STEP.TEST_EXEC)
+    {
+        setInterval(function () {
+            fetch("@Url.Action("StepAuditExecPartial", "AuditAjax")", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    projectNum: '@Model.Project.XCONF_PROJECT_NUM',
+                    ruleList: [@Model.auditRulesExecViewModel.ruleNums]
+                })
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.refresh) {
+                    showLoader();
+                    window.location.reload(true);
+                }
+
+                $('#stepBody').html(result);
+                $("div[id^=tooltip]").remove();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }, 10000);
     }
 </script>
