@@ -12,3 +12,21 @@ Vous allez créer le constructeur d'un objet piscine. Cet objet piscine aura bes
 A cette étape vous pouvez déja instancier un objet piscine basique en lui passant 4 valeurs en argument. Le problème c'est que cet objet ne fait rien pour le moment. Vous allez donc lui ajouter une méthode remplissage.
 
 La fonction remplissage calcul le temps de remplissage de la piscine grâce aux attributs de l'objet et retourne ce résultat. A ce stade votre objet est fonctionnel et fait ce qu'on lui demande, il prend des valeurs et calcul un débit.
+
+correction : 
+class Piscine {
+    constructor(longueur, largeur, hauteur, debit) {
+        this.longueur = longueur,
+            this.largeur = largeur,
+            this.hauteur = hauteur,
+            this.debit = debit
+    }
+
+    remplissage() {
+        return (this.longueur * this.largeur * this.hauteur) / this.debit;
+    }
+}
+
+let piscine1 = new Piscine(10, 10, 20, 5);
+
+console.log(`Le remplissage de la piscine prendra :  ${piscine1.remplissage()} par minute`);
