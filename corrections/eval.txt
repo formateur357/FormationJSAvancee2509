@@ -1,0 +1,5 @@
+www.siilearning.com
+puis rubrique => evaluer votre formation
+identifiant : stagiaire
+motdepass : fefpass
+code session : 360222
