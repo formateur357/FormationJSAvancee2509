@@ -1,0 +1,34 @@
+script>
+    setEditPage();
+
+ 
+
+    @if (Model.Project.XCONF_WORKFLOW_STEP_NUM == (int)XCONF.Util.Enumerations.WORKFLOW_STEP.AUDIT_EXEC ||
+            Model.Project.XCONF_WORKFLOW_STEP_NUM == (int)XCONF.Util.Enumerations.WORKFLOW_STEP.TEST_EXEC)
+    {
+<text>
+        setInterval(function () {
+            $.ajax({
+                url: "@Url.Action("StepAuditExecPartial", "AuditAjax")",
+                type: "post",
+                data: {
+                    projectNum: '@Model.Project.XCONF_PROJECT_NUM',
+                    ruleList: [@Model.auditRulesExecViewModel.ruleNums]
+                },
+                success: function (result) {
+                    if (result.refresh) {
+                        showLoader();
+                        window.location.reload(true);
+                    }
+
+ 
+
+                    $('#stepBody').html(result);
+                    $("div[id^=tooltip]").remove();
+                }
+            });
+        }
+        , 10000);
+</text>
+    }
+</script>
