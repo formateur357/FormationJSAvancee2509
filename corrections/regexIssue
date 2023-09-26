@@ -1,0 +1,4 @@
+"{ \"id\": 1, \"result\": [ { \"status\": { \"code\": 0, \"message\": \"OK\" }, \"url\": \"\\/sys\\/login\\/user\" } ]}"
+
+
+Exercice : Supprimer les '\' et modifier les " en ' sauf les " encadrant l'objet.
