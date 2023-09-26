@@ -1,5 +1,5 @@
 const apiResult = "{ \"id\": 1, \"result\": [ { \"status\": { \"code\": 0, \"message\": \"OK\" }, \"url\": \"\\/sys\\/login\\/user\" } ]}";
-const apiResultWithoutBackslash = apiResult.replace(/\\/g, '');
+const apiResultWithoutBacklash = apiResult.replace(/\\+/g, "");
+const apiResultHarmonized = apiResultWithoutBacklash.replace(/"([^"]*[^\\])"/g, "'$1'");
 
-// Will return : { "id": 1, "result": [ { "status": { "code": 0, "message": "OK" }, "url": "/sys/login/user" } ]}
-console.log(apiResultWithoutBackslash);
+console.log(apiResultHarmonized);
